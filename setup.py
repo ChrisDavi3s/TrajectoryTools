@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='TrajectoryTools',
-    version='0.0.1',
+    version='0.0.2',
     author='Chris Davies',
     author_email='',
     description='A package for loading,saving and manipulating trajectories',
