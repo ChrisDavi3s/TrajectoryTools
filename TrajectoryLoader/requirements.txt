@@ -1,0 +1,8 @@
+# platform: osx-arm64
+numpy==1.26.3
+pandas==2.1.4
+pymatgen==2023.12.18
+python==3.11.7
+scipy==1.11.4
+
+
