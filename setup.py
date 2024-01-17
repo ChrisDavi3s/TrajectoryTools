@@ -5,14 +5,14 @@ with open('requirements.txt') as f:
     required_packages = f.read().splitlines()
 
 setup(
-    name='TrajectoryLoaders',
+    name='TrajectoryTools',
     version='0.0.1',
     author='Chris Davies',
     author_email='',
-    description='A package for loading various molecular dynamics trajectory formats',
+    description='A package for loading,saving and manipulating trajectories',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/chrisdavi3s/TrajectoryTools/TrajectoryLoader',
+    url='https://github.com/chrisdavi3s/TrajectoryTools',
     project_urls={
         'Bug Tracker': 'https://github.com/TrajectoryTools/issues',
     },
@@ -20,8 +20,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
     ],
-    package_dir={'': 'src'},
-    packages=find_packages(where='src'),
+    packages=find_packages(),
     install_requires = required_packages,
     extras_require={
         'dev': [
