@@ -18,7 +18,9 @@ class StructureLoader(ABC):
     '''
 
     @abstractmethod
-    def __init__(self, filepath: str, structures_slice: slice):
+    def __init__(self, 
+                 filepath: str,
+                structures_slice: slice):
         self.filepath = filepath
         self.structures_slice = structures_slice
 

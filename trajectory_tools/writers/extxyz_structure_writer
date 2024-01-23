@@ -1,0 +1,95 @@
+import os
+from .structure_writer import StructureWriter
+
+class XYZStructureWriter(StructureWriter):
+    '''
+    Class to write a pymatgen structure to an xyz file.
+
+    WARNING: NOT IMPLEMENTED
+
+    Parameters
+    ----------
+    filename: str
+        Path to save to
+
+    '''
+
+    def __init__(self, filename):
+        self.filename = filename
+        self.file = None
+        self.clear_file()
+
+    def __del__(self):
+        self.close()
+
+    def open(self):
+        '''
+        Open the file for appending.
+        '''
+        if self.file is None or self.file.closed:
+            self.file = open(self.filename, 'a')
+
+    def close(self):
+        '''
+        Close the file explicitly.
+        '''
+        if self.file and not self.file.closed:
+            self.file.close()
+
+    def clear_file(self):
+        '''
+        Clear the file if it exists
+        '''
+        self.close()
+        if os.path.exists(self.filename):
+            os.remove(self.filename)
+        self.file = open(self.filename, 'a')
+
+    def write_structure(self, structure) -> None:
+        '''
+        Write a single structure to the file.
+
+        Parameters
+        ----------
+        structure: pymatgen structure
+            Structure to write to the file
+        '''
+
+        '''
+        TODO: Add support for writing multiple properties to the file
+        '''
+        # if self.file is None or self.file.closed:
+        #     raise RuntimeError(
+        #         "File is not opened. Please call the open method first.")
+
+        # f = self.file
+        # f.write(str(len(structure)) + "\n")
+        # lattice = structure.lattice.matrix
+        # counter = 0
+        # lattice_str = ' '.join([str(x) for row in lattice for x in row])
+        # f.write(
+        #     f"Lattice=\"{lattice_str}\" Properties=species:S:1:pos:R:3:environment:I:1\n")
+        # for site in structure.sites:
+        #     species = site.specie.symbol
+        #     props = site.properties
+        #     env = props.get('environment', StructureEnvironment.NONE)
+
+        #     # If env is a StructureEnvironment object, convert it to integer
+        #     if isinstance(env, StructureEnvironment):
+        #         env_integer = StructureEnvironment.to_index(env)
+        #     else:  # If env is a dictionary of StructureEnvironment objects and their weights, convert to integer
+        #         env_object = next((key for key, value in env.items(
+        #         ) if value == 1.0), StructureEnvironment.UNKNOWN)
+        #         env_integer = StructureEnvironment.to_index(env_object)
+
+        #     coords = " ".join([str(i) for i in site.coords])
+        #     f.write(f"{species} {coords} {env_integer}\n")
+        #     counter += 1
+        # print(f"Wrote {counter} atoms to file")
+
+    def __enter__(self):
+        self.open()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()

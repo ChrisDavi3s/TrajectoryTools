@@ -11,7 +11,7 @@ TrajectoryTools is a Python library designed for loading and processing trajecto
 
 - `writers`[WIP]: Export pymatgen structures into various file formats suitable for downstream analysis.
 
-- `smoothing`[WIP]: Advanced sub-package for smoothing and averaging trajectory data, enhancing the signal-to-noise ratio and preparing data for high-level analyses.
+- `transforms`[WIP]: Advanced sub-package for smoothing and averaging trajectory data. Also has tools to reshape trajectory.
 
 - `parallel`[WIP]:  A collection of parallel computing utilities for efficient trajectory analysis and processing.
     - `task_runner`: Execute parallel processing tasks on trajectory data for faster data manipulation and transformation
