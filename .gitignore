@@ -17,3 +17,5 @@ trajectory_tools/writers/__pycache__/__init__.cpython-311.pyc
 trajectory_tools/writers/__pycache__/structure_writer.cpython-311.pyc
 trajectory_tools/writers/__pycache__/xyz_structure_writer.cpython-311.pyc
 .gitignore
+trajectory_tools/transforms/__pycache__/same_structure_aligner.cpython-311.pyc
+trajectory_tools/transforms/__pycache__/same_structure_matcher.cpython-311.pyc

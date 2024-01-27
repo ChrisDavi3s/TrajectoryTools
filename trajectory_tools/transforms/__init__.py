@@ -1,1 +1,2 @@
 from .average_trajectory import AverageTrajectoryCreator
+from .same_structure_matcher import SameStructureMatcher
